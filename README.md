@@ -1,6 +1,7 @@
 # ICRC fork
 
 This is a fork from https://github.com/Bahmni/openmrs-module-appointments-frontend to be able to use appointment frontend on a OpenMRS distro and not only on a Bahmni installation.
+the main branch is `main_icrc`.
 
 Openmrs Module Appointment Dashboard
 =

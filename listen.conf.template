@@ -1,1 +1,3 @@
-listen       ${APPOINTMENTS_NGINX_PORT};
+server {
+    listen       ${APPOINTMENTS_NGINX_PORT};
+}

@@ -1,3 +1,0 @@
-server {
-    listen       ${APPOINTMENTS_NGINX_PORT};
-}

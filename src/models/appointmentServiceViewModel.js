@@ -33,11 +33,9 @@ Bahmni.Appointments.AppointmentServiceViewModel = (function () {
             if (!time) {
                 return undefined;
             }
+            const [hours, minutes, seconds = 0] = time.split(':').map(Number);
             let date = new Date();
-            date.setHours(time.split(':')[0]);
-            date.setMinutes(time.split(':')[1]);
-            date.setSeconds(time.split(':')[2]);
-            date.setMilliseconds(0);
+            date.setUTCHours(hours, minutes, seconds, 0);
             return date;
         };
 

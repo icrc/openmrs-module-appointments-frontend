@@ -17,7 +17,10 @@ Bahmni.Appointments.AppointmentService = (function () {
             now.setHours(dateTime.getHours());
             now.setMinutes(dateTime.getMinutes());
             now.setSeconds(dateTime.getSeconds());
-            return ('0' + now.getUTCHours()).slice(-2) + ':' + ('0' + now.getUTCMinutes()).slice(-2) + ':' + ('0' + now.getUTCSeconds()).slice(-2);
+            const hours = ('0' + now.getUTCHours()).slice(-2);
+            const minutes = ('0' + now.getUTCMinutes()).slice(-2);
+            const seconds = ('0' + now.getUTCSeconds()).slice(-2);
+            return `${hours}:${minutes}:${seconds}`;
         };
 
         var constructAvailabilityPerDay = function (result, availability) {

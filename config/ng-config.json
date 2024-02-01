@@ -79,11 +79,11 @@
       "fetchLoginLocationURL": "/openmrs/ws/rest/v1/appui/session",
       "openMRSSystemSettingUrl": "/openmrs/ws/rest/v1/systemsetting/",
       "baseLocaleURL": "./i18n/",
-      "customLocaleURL": "/bahmni_config/openmrs/i18n/",
-      "loginPageUrl": "../../bahmni/home/index.html#/login",
+      "customLocaleURL": "/openmrs/frontend/bahmniapps/i18n/",
+      "loginPageUrl": "/openmrs/login.htm",
       "patientsURL": "/bahmni/clinical/index.html#/default/patient/",
       "patientsURLGeneralInformationTab": "/dashboard?currentTab=DASHBOARD_TAB_GENERAL_KEY",
-      "appointmentsListPatientLink": "/bahmni/clinical/index.html#/default/patient/{{patientId}}/dashboard?currentTab=DASHBOARD_TAB_GENERAL_KEY"
+      "appointmentsListPatientLink": "/openmrs/coreapps/clinicianfacing/patient.page?patientId={{patientId}}&dashboard=programsDashboard"
     }
   },
   "Appointments": {
@@ -114,7 +114,7 @@
       "minDurationForAppointment": 30,
       "appointmentStatusList": ["Requested","Scheduled","CheckedIn","Completed","Cancelled","Missed"],
       "regexForTime": "(?:(?:1[0-2]|0?[1-9]):[0-5]\\d\\s*[AaPp][Mm])?",
-      "privilegeManageAppointments": "app:appointments:manageAppointmentsTab",
+      "privilegeManageAppointments": "Manage Appointments",
       "privilegeForAdmin": "Manage Appointment Services",
       "privilegeOwnAppointments": "Manage Own Appointments",
       "privilegeResetAppointmentStatus": "Reset Appointment Status",

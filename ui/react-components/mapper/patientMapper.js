@@ -1,7 +1,7 @@
 export const getPatientName = (patient) => {
-    const givenName = patient.givenName ? patient.givenName : '';
-    const familyName = patient.familyName ? patient.familyName : '';
-    return givenName && familyName ? `${givenName} ${familyName}` : `${givenName}` || `${familyName}`;
+     return [patient.givenName, patient.middleName, patient.familyName]
+        .filter(Boolean)
+        .join(' ');
 };
 
 export const getPatientForDropdown = patient => {

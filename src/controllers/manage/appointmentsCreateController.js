@@ -296,7 +296,11 @@ angular.module('bahmni.appointments')
 
             $scope.responseMap = function (data) {
                 return _.map(data, function (patientInfo) {
-                    patientInfo.label = patientInfo.givenName + (patientInfo.familyName ? " " + patientInfo.familyName : "") + " " + "(" + patientInfo.identifier + ")";
+                    var fullPatientName = [patientInfo.givenName, patientInfo.middleName, patientInfo.familyName]
+                        .filter(Boolean)
+                        .join(' ');
+
+                    patientInfo.label = fullPatientName + " " + "(" + patientInfo.identifier + ")";
                     return patientInfo;
                 });
             };

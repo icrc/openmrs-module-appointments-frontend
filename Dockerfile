@@ -13,7 +13,7 @@ RUN --mount=type=cache,target=/app/node_modules \
     --mount=type=cache,target=/root/.npm \
     npm run bundle
 
-FROM nginxinc/nginx-unprivileged:1.25-alpine
+FROM nginxinc/nginx-unprivileged:1.27-alpine
 ARG UID=nginx
 ARG GID=nginx
 

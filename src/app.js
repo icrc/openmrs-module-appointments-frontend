@@ -1,5 +1,7 @@
 'use strict';
 
+import {getLocale} from "../ui/react-components/utils/LocalStorageUtil";
+
 angular
     .module('bahmni.appointments')
     .config(['$urlRouterProvider', '$stateProvider', '$httpProvider', '$bahmniTranslateProvider', '$compileProvider',
@@ -191,5 +193,5 @@ angular
 
             $bahmniTranslateProvider.init({app: 'appointments', shouldMerge: true});
         }]).run(['$window', function ($window) {
-            moment.locale($window.localStorage["NG_TRANSLATE_LANG_KEY"] || "en");
+            moment.locale(getLocale());
         }]);

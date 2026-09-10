@@ -38,7 +38,22 @@ angular
                     initializeConfig: ['initialization', '$stateParams', function (initialization, $stateParams) {
                             return initialization($stateParams.appName);
                         }
-                    ]}
+                    ],
+                    currentSessionUser: [
+                        '$http',
+                        'initializeConfig',
+                        function ($http) {
+                            return $http
+                                .get('/openmrs/ws/rest/v1/session')
+                                .then(function (response) {
+                                    if (response.data && response.data.authenticated && response.data.user) {
+                                        return response.data.user;
+                                    }
+                                    return null;
+                                });
+                        }
+                    ]
+                }
             }).state('home.manage', {
                 url: '/manage',
                 views: {

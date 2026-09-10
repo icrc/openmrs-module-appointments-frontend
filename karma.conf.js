@@ -17,7 +17,11 @@ module.exports = (config) => {
             {pattern: 'test/ng-test-constants.js', watched: false},
             {pattern: 'test/support/*.js', watched: false},
             {pattern: 'test/**/*spec.js', watched: false},
+            {pattern: 'config/*.json', included: false, served: true, watched: false}
         ],
+        proxies: {
+            '/config/': '/base/config/'
+        },
         reporters: ['junit', 'progress', 'coverage'],
         preprocessors: {
             'dist/appointment.js': ['coverage'],
